@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		37127D0B1A9901B900599B6E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37127D0A1A9901B900599B6E /* main.m */; };
+		3757A2931A99169E00036F83 /* api-ping.m in Sources */ = {isa = PBXBuildFile; fileRef = 3757A2921A99169E00036F83 /* api-ping.m */; };
+		AEC8A915D094D77203DB56E6 /* libPods-ping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8C0009CAAA52F0F98D1606 /* libPods-ping.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,12 @@
 /* Begin PBXFileReference section */
 		37127D071A9901B900599B6E /* ping */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ping; sourceTree = BUILT_PRODUCTS_DIR; };
 		37127D0A1A9901B900599B6E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3757A2911A9913DD00036F83 /* lumberjack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lumberjack.h; sourceTree = "<group>"; };
+		3757A2921A99169E00036F83 /* api-ping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "api-ping.m"; sourceTree = "<group>"; };
+		3757A2941A992F4200036F83 /* api-ping.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "api-ping.h"; sourceTree = "<group>"; };
+		75F5AD618C0D21647ABDF615 /* Pods-ping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ping.release.xcconfig"; path = "Pods/Target Support Files/Pods-ping/Pods-ping.release.xcconfig"; sourceTree = "<group>"; };
+		D3E49A3384D93725A75C51A4 /* Pods-ping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ping.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ping/Pods-ping.debug.xcconfig"; sourceTree = "<group>"; };
+		ED8C0009CAAA52F0F98D1606 /* libPods-ping.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ping.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEC8A915D094D77203DB56E6 /* libPods-ping.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +52,8 @@
 			children = (
 				37127D091A9901B900599B6E /* ping */,
 				37127D081A9901B900599B6E /* Products */,
+				B778E3E06067B6005B0CD9CB /* Pods */,
+				3B1C3F1A75A813BE50C8C587 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,8 +69,28 @@
 			isa = PBXGroup;
 			children = (
 				37127D0A1A9901B900599B6E /* main.m */,
+				3757A2911A9913DD00036F83 /* lumberjack.h */,
+				3757A2921A99169E00036F83 /* api-ping.m */,
+				3757A2941A992F4200036F83 /* api-ping.h */,
 			);
 			path = ping;
+			sourceTree = "<group>";
+		};
+		3B1C3F1A75A813BE50C8C587 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED8C0009CAAA52F0F98D1606 /* libPods-ping.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B778E3E06067B6005B0CD9CB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D3E49A3384D93725A75C51A4 /* Pods-ping.debug.xcconfig */,
+				75F5AD618C0D21647ABDF615 /* Pods-ping.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -69,9 +100,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 37127D0E1A9901B900599B6E /* Build configuration list for PBXNativeTarget "ping" */;
 			buildPhases = (
+				900261A759775994BCD67A4F /* Check Pods Manifest.lock */,
 				37127D031A9901B900599B6E /* Sources */,
 				37127D041A9901B900599B6E /* Frameworks */,
 				37127D051A9901B900599B6E /* CopyFiles */,
+				EA6EA881454D762D4625DE0A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -113,11 +146,45 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		900261A759775994BCD67A4F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EA6EA881454D762D4625DE0A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ping/Pods-ping-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		37127D031A9901B900599B6E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3757A2931A99169E00036F83 /* api-ping.m in Sources */,
 				37127D0B1A9901B900599B6E /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,6 +268,7 @@
 		};
 		37127D0F1A9901B900599B6E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3E49A3384D93725A75C51A4 /* Pods-ping.debug.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -208,6 +276,7 @@
 		};
 		37127D101A9901B900599B6E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75F5AD618C0D21647ABDF615 /* Pods-ping.release.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -232,6 +301,7 @@
 				37127D101A9901B900599B6E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

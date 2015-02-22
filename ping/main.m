@@ -7,11 +7,24 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "lumberjack.h"
+#import "api-ping.h"
 
-int main(int argc, const char * argv[]) {
-    @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
-    }
-    return 0;
+int ddLogLevel = LOG_LEVEL_ALL;
+
+int main(int argc, const char* argv[])
+{
+
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    NSRunLoop* runLoop;
+    APIPing* req;
+
+    runLoop = [NSRunLoop currentRunLoop];
+    req = [[APIPing alloc] init];
+    [req start];
+
+    while ((!(req.shouldExit)) && (([runLoop runMode:NSDefaultRunLoopMode beforeDate:[NSDate dateWithTimeIntervalSinceNow:2]])))
+        ;
+
+    return (req.exitCode);
 }

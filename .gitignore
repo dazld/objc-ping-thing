@@ -1,5 +1,7 @@
 # Xcode
 #
+
+ping/build
 build/
 *.pbxuser
 !default.pbxuser

@@ -6,5 +6,6 @@ target 'ping' do
     pod 'CocoaLumberjack'
     pod 'JSONModel'
     pod 'libextobjc'
+    pod 'PromiseKit'
 end
 

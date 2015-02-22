@@ -12,12 +12,12 @@
 
 int ddLogLevel = LOG_LEVEL_ALL;
 
-int main(int argc, const char* argv[])
+int main(int argc, const char *argv[])
 {
 
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
-    NSRunLoop* runLoop;
-    APIPing* req;
+    NSRunLoop *runLoop;
+    APIPing *req;
 
     runLoop = [NSRunLoop currentRunLoop];
     req = [[APIPing alloc] init];

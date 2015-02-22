@@ -10,8 +10,6 @@
 #import <CocoaLumberjack/DDTTYLogger.h>
 #import <CocoaLumberjack/DDASLLogger.h>
 
-
-
 #ifndef ping_lumberjack_h
 #define ping_lumberjack_h
 extern int ddLogLevel;

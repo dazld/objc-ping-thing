@@ -1,0 +1,9 @@
+BasedOnStyle: LLVM
+IndentWidth: 4
+AlignAfterOpenBracket: true
+ObjCSpaceAfterProperty: true
+ColumnLimit: 0
+UseTab: Never
+BreakBeforeBraces: Linux
+AllowShortIfStatementsOnASingleLine: true
+IndentCaseLabels: false

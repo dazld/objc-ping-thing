@@ -11,6 +11,7 @@
 
 #import <Foundation/Foundation.h>
 #import <AFNetworking/AFnetworking.h>
+#import <PromiseKit/PromiseKit.h>
 #import "lumberjack.h"
 
 @interface APIPing : NSObject {
@@ -21,7 +22,7 @@
 @property (nonatomic, readwrite) bool shouldExit;
 @property (nonatomic, readwrite) int exitCode;
 
-- (void)start;
+- (PMKPromise*)start;
 @end
 
 #endif

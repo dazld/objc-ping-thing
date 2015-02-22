@@ -30,6 +30,7 @@
 		3757A2911A9913DD00036F83 /* lumberjack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lumberjack.h; sourceTree = "<group>"; };
 		3757A2921A99169E00036F83 /* api-ping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "api-ping.m"; sourceTree = "<group>"; };
 		3757A2941A992F4200036F83 /* api-ping.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "api-ping.h"; sourceTree = "<group>"; };
+		37BFAF851A9A21A50018F8A0 /* .clang-format */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ".clang-format"; sourceTree = "<group>"; };
 		75F5AD618C0D21647ABDF615 /* Pods-ping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ping.release.xcconfig"; path = "Pods/Target Support Files/Pods-ping/Pods-ping.release.xcconfig"; sourceTree = "<group>"; };
 		D3E49A3384D93725A75C51A4 /* Pods-ping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ping.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ping/Pods-ping.debug.xcconfig"; sourceTree = "<group>"; };
 		ED8C0009CAAA52F0F98D1606 /* libPods-ping.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ping.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +51,7 @@
 		37127CFE1A9901B900599B6E = {
 			isa = PBXGroup;
 			children = (
+				37BFAF851A9A21A50018F8A0 /* .clang-format */,
 				37127D091A9901B900599B6E /* ping */,
 				37127D081A9901B900599B6E /* Products */,
 				B778E3E06067B6005B0CD9CB /* Pods */,

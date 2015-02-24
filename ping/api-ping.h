@@ -22,7 +22,8 @@
 @property (nonatomic, readwrite) bool shouldExit;
 @property (nonatomic, readwrite) int exitCode;
 
-- (PMKPromise*)start;
+- (PMKPromise *)start;
+- (void)handleError:(NSError *)error;
 @end
 
 #endif
